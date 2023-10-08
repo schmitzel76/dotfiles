@@ -1,4 +1,4 @@
--- lazy.vim ininitalization
+-- lazy.vim ibootstrap / ininitalization
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not vim.loop.fs_stat(lazypath) then vim.fn.system({ "git", "clone",
@@ -10,18 +10,28 @@ if not vim.loop.fs_stat(lazypath) then vim.fn.system({ "git", "clone",
 vim.opt.rtp:prepend(lazypath)
 
 -- global configuration
-vim.g.mapleader = " " vim.keymap.set("n", "<leader>e", vim.cmd.Ex) vim.opt.nu =
-true
+vim.g.mapleader = " " vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 
-vim.opt.tabstop = 4 vim.opt.softtabstop = 4 vim.opt.shiftwidth = 4
-vim.opt.expandtab = true vim.opt.smartindent = true
+-- Enable line number and realtive line numbering
+vim.opt.number = true
+vim.opt.relativenumber = true
 
-vim.opt.hlsearch = false vim.opt.incsearch = true
+-- Set defaults for indent and tab stops to 4 spaces
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.smartindent = true
 
+-- Search highlighting
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+
+-- color scheme to use
 vim.cmd.colorscheme("koehler")
 
 -- Plugin installation
-require("lazy").setup({
+require("lazy").setup( {
     "nvim-lualine/lualine.nvim",
     "nvim-tree/nvim-web-devicons", "nvim-treesitter/nvim-treesitter",
     { 'nvim-telescope/telescope.nvim', tag = '0.1.3', dependencies = {
@@ -31,14 +41,14 @@ require("lazy").setup({
 
     { 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
 
-        --- Uncomment these if you want to manage LSP servers from neovim
-        {'williamboman/mason.nvim'}, {'williamboman/mason-lspconfig.nvim'},
+    --- Use Mason to manage LSP servers from neovim
+    { 'williamboman/mason.nvim' },
+    { 'williamboman/mason-lspconfig.nvim' },
 
-        -- LSP Support
-        { 'neovim/nvim-lspconfig', dependencies = { {'hrsh7th/cmp-nvim-lsp'},
-    }, },
+    -- LSP Support
+    { 'neovim/nvim-lspconfig', dependencies = { { 'hrsh7th/cmp-nvim-lsp' } } },
 
     -- Autocompletion
-    { 'hrsh7th/nvim-cmp', dependencies = { {'L3MON4D3/LuaSnip'}, } } })
-
+    { 'hrsh7th/nvim-cmp', dependencies = { { 'L3MON4D3/LuaSnip'} } }
+} )
 
