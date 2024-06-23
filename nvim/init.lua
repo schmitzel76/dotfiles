@@ -18,6 +18,6 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 -- color scheme to use
-vim.cmd.colorscheme("desert")
+vim.cmd.colorscheme("koehler")
 
 require("config.lazy")
