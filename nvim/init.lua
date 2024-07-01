@@ -17,7 +17,10 @@ vim.opt.smartindent = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
+-- spelling
+vim.opt.spelllang = "en_us,nl_nl"
+
 -- color scheme to use
-vim.cmd.colorscheme("koehler")
+vim.cmd.colorscheme("torte")
 
 require("config.lazy")
