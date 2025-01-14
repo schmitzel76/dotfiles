@@ -16,6 +16,9 @@ bindkey -v
 source /usr/share/doc/fzf/examples/completion.zsh
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 
+[ -z "$(which podman)" ] || eval "$(podman completion zsh)"
+[ -z "$(which gh)" ] ||eval "$(gh completion -s zsh)"
+
 eval "$(zoxide init zsh --cmd cd)"
 eval "$(starship init zsh)"
 

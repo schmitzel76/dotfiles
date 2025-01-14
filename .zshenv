@@ -5,3 +5,5 @@ PATH+=:$HOME/bin
 
 export PATH
 
+export EDITOR=$(which nvim)
+
