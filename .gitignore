@@ -1,4 +1,5 @@
 .venv/
+fish/fish_variables
 nvim/spell/
 nvim/lazy-lock.json
 
