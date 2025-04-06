@@ -1,5 +1,4 @@
 -- global configuration
-vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 
 -- Enable line number and realtive line numbering
